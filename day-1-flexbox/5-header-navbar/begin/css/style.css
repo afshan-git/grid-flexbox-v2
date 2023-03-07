@@ -44,7 +44,7 @@ section h2 {
     font-size: 2.5rem;
 }
 
-section ul {
+ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -202,6 +202,43 @@ footer address {
 }
 
 
+.header{
+    background-color: var(--color5);
+
+}
+    
+header {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav ul{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+nav li{
+    flex-basis: 48%;
+    margin-bottom: 0.5rem;
+}
+
+
+nav a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+    color: var(--color1);
+    padding: 0.5rem;
+    background-color: var(--color10);
+    border-radius: 5px;
+}
+nav a:hover {
+    background-color: var(--color1);
+    color: var(--color5);
+}
+
+
 /* turn on flexbox here - prior to this, elements stacked individually as blocks */
 
 @media (min-width: 550px) {
@@ -235,6 +272,22 @@ footer address {
     footer address {
         margin-top: 0;
     }
+    header{
+        padding: 3rem;
+    }
+    nav a{
+        background-color: transparent;
+    }
+    nav ul{
+        justify-content: center;
+    }
+    nav li{
+        flex-basis: auto;
+    }
+    nav li:first-child{
+        flex-basis: 100%;
+    }
+
 }
 
 @media (min-width: 800px) {
@@ -247,5 +300,23 @@ footer address {
     }
     address {
         flex-basis: 65.5%;
+    }
+    nav ul {
+        justify-content: flex-end;
+    }
+    nav ul li:nth-child(2),
+    nav ul li:nth-child(3){
+        order : 1;
+
+    }
+    nav ul li:nth-child(4),
+    nav ul li:nth-child(5){
+        order : 3;
+
+    }
+    nav li:first-child{
+        order: 2;
+        margin: 0 auto;
+        flex-basis: auto;
     }
 }
